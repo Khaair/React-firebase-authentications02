@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import firebaseConfig from '../firebaseConfig'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,updateProfile  } from "firebase/auth";
 
 
 
@@ -43,9 +43,16 @@ export default function Signup() {
       createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
-        const user = userCredential.user;
-        console.log(user,"user")
-        navigate("/")
+        updateProfile(auth.currentUser, {
+          displayName: name, photoURL: "https://example.com/jane-q-user/profile.jpg"
+        }).then(() => {
+          // Profile updated!
+          // ...
+          const user = userCredential.user;
+          console.log(user,"user")
+          navigate("/")
+        })
+      
 
         // ...
       })
