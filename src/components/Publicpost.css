@@ -1,0 +1,154 @@
+.addtocartimg{
+    height: 100px;
+    width: 150px;
+  }
+  
+  .adddetails{
+    margin-left: 40px;
+  }
+  
+  .addtocartone{
+    margin-top: 40px;
+  
+    display: flex;
+  
+  }
+  
+  .addbtnn{
+    margin-left: 350px;
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #00156A;
+    border: 1px solid whitesmoke;
+    color: aliceblue;
+    font-weight: bold;
+    
+  }
+  .div1{
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      }
+  .Addcontainer{
+      
+      
+      width: 800px;
+      margin: 30px;
+      height: auto;
+      background-color: #F2F2F2;
+      padding: 30px;
+      box-shadow: 5px black;
+      border-radius: 20px;
+      border: 1px solid gray;
+  
+      }
+  
+      
+    @media (max-width: 968px){
+      .Addcontainer{
+      width: 420px;
+       
+      }
+  .addbtnn{
+    margin-left: 110px;
+    width: 120px;
+    height:50px;
+    margin-bottom: 10px;
+  
+   
+  }
+  
+    }
+  
+  
+  
+  .peraaddtocart{
+      text-align: justify;
+  }
+  
+  
+  
+  
+  
+      .wcenter{
+          text-align: center;
+      }
+  
+        
+      
+        .imgg{
+          height: 200px;
+          width: 200px;
+          margin-left: 300px;
+        }
+  
+        .titlee{
+            background-color: black;
+            margin-top: 15px;
+            padding-left: 30px;
+            color: aliceblue;
+            display: flex;
+        }
+  
+        .titlee h2{
+            text-align: left;
+        }
+  
+  
+        .cuponbtn{
+          border: 1px solid #00156A;
+          padding: 6px;
+          font-weight: bold;
+          color: #00156A;
+          border-radius: 4px;
+          transition: 0.7s ease-in-out;
+          background-color:white;
+          
+        } 
+        
+        
+        .cuponbtn:hover{
+          background-color: #00156A;
+          color: aliceblue;
+        }
+  
+  
+        .addcheckoutbtnn{
+          border: 1px solid #00156A;
+          padding: 8px;
+          font-weight: bold;
+          color: #00156A;
+          border-radius: 4px;
+          transition: 0.7s ease-in-out;
+          background-color:white;
+          margin-top:5px;
+          width: 100px;
+          height:53px;
+          
+        } 
+        
+        
+        .addcheckoutbtnn:hover{
+          background-color: #00156A;
+          color: aliceblue;
+        }
+  
+        .llk{
+            display: flex;
+            
+        }
+  
+        .cartpdetails{
+          text-align: justify;
+        }
+  
+        
+  
+           
+    @media (max-width: 968px){
+      .addcheckoutbtnn{
+        margin-left: 160px;
+       
+      }
+    }

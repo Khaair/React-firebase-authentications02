@@ -1,10 +1,20 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { getAuth,signOut ,onAuthStateChanged  } from "firebase/auth";
-import { useNavigate } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
+import Home from './Home';
+import Navbar from './Navbar';
+import Profile from './Profile';
+import ShowApply from './ShowApply';
 
 
 
-export default function Deshboard() {
+
+export default function Deshboard({easyapplydeleteHandler,applydata}) {
+
+  const [currentuser,setCurrentuser] = useState('')
+
+  console.log(currentuser,"currentuserrrrrr")
+
   const auth = getAuth();
 
  const navigate = useNavigate()
@@ -31,8 +41,14 @@ export default function Deshboard() {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
-    console.log(uid,"userrr")
+    // console.log(uid,"userrr")
+    console.log(user.auth.currentUser.displayName,"userrr")
+
+
     console.log(auth.currentUser,"auth")
+
+    setCurrentuser(user.auth.currentUser.displayName)
+   
 
     // ...
   } else {
@@ -45,8 +61,17 @@ export default function Deshboard() {
 });
   return (
    <>
-    <div>Deshboard</div>
-    <button onClick={handlelogout}>Log Out</button>
+   <Navbar handlelogout={handlelogout}/>
+     
+  
+    <Routes>
+    <Route path="home" element={<Home/>} />
+    <Route path="profile" element={<Profile currentuser={currentuser}/>} />
+    <Route  path="showapply" element= {<ShowApply easyapplydeleteHandler={easyapplydeleteHandler} applydata={applydata} />}/>
+
+
+
+    </Routes>
    </>
   )
 }
