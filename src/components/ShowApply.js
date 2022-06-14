@@ -1,5 +1,7 @@
 import UserDataService from "../services/user.services"
 import React from 'react'
+import "./ShowApply.css";
+
 
 import { useEffect, useState } from "react";
 
@@ -11,13 +13,14 @@ function ShowApply({applydata,easyapplydeleteHandler}) {
   return (
     <>
  
-    <div className='container mt-5'>
+    <div className='containerr'>
     <div className="mb-2">
         {/* <button variant="dark edit" onClick={getUsers}>
           Refresh List
         </button> */}
       </div>
-      <table className="table table-dark">
+      <h1>All Submitted Applications</h1>
+      <table className="table table-dark tbl">
         <thead>
           <tr>
           <th scope="col">Sl</th>

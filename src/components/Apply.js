@@ -23,23 +23,29 @@ export default function Apply({data}) {
     const [skill,setSkill]= useState("")
 
 
-
+   console.log(title,"titleoo")
 
    
     
 
     let {id} =useParams();
 
+    console.log(id,"idk")
 
-    console.log(data[id],"apply")
+  
 
-    useEffect(()=>{
-        let element=data[id];
-        setTitle(element.title);
+   
 
-        console.log(element,"element")
+
+    console.log(data,"apply")
+
+    // useEffect(()=>{
+    //     let element=data[id];
+    //     setTitle(element.title);
+
+    //     console.log(element,"element")
     
-     },[id])
+    //  },[id])
 
      
 
@@ -83,10 +89,26 @@ export default function Apply({data}) {
         
           <div className="lcontainer">
             <h3 style={{color:'#00156A',fontWeight:'bold'}}>Easy Apply</h3>
-            <h4 style={{color:'#00156A',fontWeight:'bold'}}>Job Post Name: <span style={{color:'red',fontWeight:'bold'}}>{title}</span></h4>
+            {
+              data.length && data.map((el,inddd)=>{
+               if(el.id==id){               
+                return(
+                  <tr key={el.id}>
+            <h4 style={{color:'#00156A',fontWeight:'bold'}}>Job Title: <span style={{color:'red',fontWeight:'bold'}}>{el.title}</span></h4>
+                 
+                  
 
+                  </tr>
+                )
+               }
+              })
+            }
             <hr></hr>
             <form>
+              <label className="name">Enter Job Title</label>
+              <br />
+              <input className="text" value={title} onChange={(e)=>setTitle(e.target.value)} type="text" name placeholder="Enter Full Name" />
+              <br />
               <label className="name">Enter Full Name</label>
               <br />
               <input className="text" value={fullname} onChange={(e)=>setFullname(e.target.value)} type="text" name placeholder="Enter Full Name" />

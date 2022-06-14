@@ -14,6 +14,8 @@ import EasyApplyDataService from "./services/easyapply.services";
 import PublicPost from "./components/PublicPost";
 import Apply from "./components/Apply";
 import ShowApply from "./components/ShowApply";
+import SearchBar from "./components/SearchBar";
+import AdminSidebar from "./components/AdminSidebar";
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -65,6 +67,9 @@ export default function App() {
           <Route path="home" element={<Home />} />
           <Route path="profile" element={<Profile />} />
           <Route path="showapply" element={<ShowApply />} />
+
+          
+          
         </Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
@@ -74,6 +79,8 @@ export default function App() {
         />
         <Route path="/publicpost" element={<PublicPost data={data} />} />
         <Route path="/edit/:id" element={<Apply data={data} />} />
+
+        
       </Routes>
     </div>
   );

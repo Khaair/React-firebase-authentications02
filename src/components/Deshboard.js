@@ -5,6 +5,9 @@ import Home from './Home';
 import Navbar from './Navbar';
 import Profile from './Profile';
 import ShowApply from './ShowApply';
+import AdminSidebar from './AdminSidebar';
+import "./Deshboard.css";
+
 
 
 
@@ -47,7 +50,7 @@ export default function Deshboard({easyapplydeleteHandler,applydata}) {
 
     console.log(auth.currentUser,"auth")
 
-    setCurrentuser(user.auth.currentUser.displayName)
+    // setCurrentuser(user.auth.currentUser.displayName)
    
 
     // ...
@@ -59,16 +62,22 @@ export default function Deshboard({easyapplydeleteHandler,applydata}) {
     
   }
 });
-  return (
+  return ( 
    <>
-   <Navbar handlelogout={handlelogout}/>
+   <div className="headingandlogoutdiv">
+   <h1  style={{color:'#00156A',fontWeight:'bold'}}>Admin Deshboard</h1>
+   <button className="Logoutbtn" onClick={handlelogout}>Log Out</button>
+   </div>
+
+
+   <AdminSidebar/>
      
   
     <Routes>
     <Route path="home" element={<Home/>} />
     <Route path="profile" element={<Profile currentuser={currentuser}/>} />
     <Route  path="showapply" element= {<ShowApply easyapplydeleteHandler={easyapplydeleteHandler} applydata={applydata} />}/>
-
+    
 
 
     </Routes>

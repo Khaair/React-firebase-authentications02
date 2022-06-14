@@ -1,8 +1,12 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Publicpost.css";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 export default function PublicPost({ data }) {
+
+
+  const [searchdata,setSearchdata] = useState("")
 
   console.log(data,"public post")
   return (
@@ -14,6 +18,10 @@ export default function PublicPost({ data }) {
             {/* <Link to="/">
               <button className="addbtnn">Continue Shoping</button>
             </Link> */}
+          </div> 
+          <div className="searchinput">
+          <SearchBar data = {data}/>
+
           </div>
 
           <div className="addtocartone">
@@ -24,7 +32,7 @@ export default function PublicPost({ data }) {
                     <tr key={doc.id}>
                       <h3>{doc.title}</h3>
                       <p className="cartpdetails">{doc.descriptions}</p>
-                     <Link to={`/edit/${ind}`}><button className="addcheckoutbtnn">Apply</button></Link> 
+                     <Link to={`/edit/${doc.id}`}><button className="addcheckoutbtnn">Apply</button></Link>
                     </tr>
                   );
                 })}
